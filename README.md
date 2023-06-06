@@ -51,7 +51,7 @@ nodemon index.js
 |    └── postModel.js
 ├── routes
 |    └── userRoute.js
-|    └── posttRoute.js
+|    └── postRoute.js
 ├──middlewares
 |    └── authenticationMiddleware.js
 ├──controllers
