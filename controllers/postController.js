@@ -5,8 +5,9 @@ const { postModel } = require("../models/postModel");
 // This controller should return a list of all posts.
 const allPostsController = async (req,res) => {
     try {
-        const data = await postModel.find().populate('User');
-        res.status(200),json(data);
+        const data = await postModel.find().populate('user');
+        console.log(data);
+        res.status(200).json(data);
     } catch (error) {
         console.log(error.message);
         res.status(500).send({
@@ -21,6 +22,7 @@ const createNewPostController = async (req,res) => {
     const payload = req.body;
     try {
         const data = await postModel(payload);
+        await data.save();
         res.status(201).json("Post created successfully")
     } catch (error) {
         console.log(error.message);
