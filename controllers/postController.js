@@ -6,7 +6,6 @@ const { postModel } = require("../models/postModel");
 const allPostsController = async (req,res) => {
     try {
         const data = await postModel.find().populate('user');
-        console.log(data);
         res.status(200).json(data);
     } catch (error) {
         console.log(error.message);
