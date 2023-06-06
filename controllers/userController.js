@@ -110,8 +110,8 @@ const allRegisteredUserController = async (req,res) => {
 const friendsOfSingleUserController = async (req,res) => {
     const Id = req.params.id;
     try {
-        const isPresent = await userModel.findOne({_id:Id});
-        const data =  isPresent.friends().populate('User');
+        const isPresent = await userModel.findById(Id);
+        const data =  isPresent.friends;
 
         res.status(200).json(data)
     } catch (error) {
