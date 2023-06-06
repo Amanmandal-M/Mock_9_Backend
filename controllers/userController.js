@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken')
 
 // Models location
 const { userModel } = require('../models/userModel');
